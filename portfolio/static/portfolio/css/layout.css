@@ -1,17 +1,19 @@
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Fira Code', monospace;
+    font-style: normal;
 }
 
 header {
     height: 10vh;
-    background: purple;
+    background: black;
     color: white;
     top: 0;
 
-    /* alinhando logo e menu */
+    /* alinhando logo e menu*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,6 +22,20 @@ header {
 header div {
     font-size: 2em;
     padding: 1em;
+}
+
+.menu {
+    position: absolute;
+    width: 345px;
+    height: 697px;
+    left: 15px;
+    top: 15px;
+}
+
+.line {
+    background: #011627;
+    border: 1px solid #1E2D3D;
+    border-radius: 8px;
 }
 
 header nav {

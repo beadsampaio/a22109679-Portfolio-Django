@@ -1,11 +1,19 @@
 <!-- home.html -->
-
 {% extends 'portfolio/layout.html' %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+<style>
+
+</style>
+
+
+
+
 
 {% block main %}
-    <h3>Titulo</h3>
-    <p>texto texto texto texto texto texto texto </p>
 
-    {% load static %}
-    <img src="{% static 'portfolio/images/imagem.png' %}">
+
+
 {% endblock %}

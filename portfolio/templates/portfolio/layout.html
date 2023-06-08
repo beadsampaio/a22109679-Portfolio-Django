@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt">
 
 <head>
@@ -6,27 +7,80 @@
     <title>Beatriz Sampaio</title>
     <meta name="author" content="Beatriz Sampaio">
     <meta name="description" content="Portfolio">
-    <meta name="keywords" content="palavras chave">
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Fira Code', monospace;
+            background-color: #011627;
+            color: #607B96;
+        }
+
+        header {
+            background-color: #011627;
+            /*ja tinha*/
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .footer-divider {
+            position: absolute;
+            width: 0px;
+            height: 1000px;
+            left: 500px;
+            top: 40px;
+            border: 2px solid #1E2D3D;
+            transform: rotate(90deg);
+        }
+
+        main {
+            background-color: #011627;
+        }
+
+        p {
+            color: #607B96;
+        }
+
+        #icon-footer {
+            padding: 10px;
+            color: #607B96;
+        }
+
+    </style>
+
 </head>
-
-
 <body>
-<header>
-    <div>Beatriz Sampaio</div>
-    <nav>
-        <a href="">home</a>
-        <a href="">products</a>
-        <a href="">about</a>
-        <a href="">contact</a>
-    </nav>
-</header>
+    <header>
+        <div>beatriz-sampaio</div>
 
-<main>
-    {% block main %}
-    {% endblock main %}
-</main>
+        <nav>
+            <a href="{% url 'portfolio:home' %}">_hello</a>
+            <a href="{% url 'portfolio:about' %}">_about-me</a>
+            <a href="{% url 'portfolio:projects' %}">_projects</a>
+            <a href="{% url 'portfolio:contact' %}">_contact-me</a>
+        </nav>
 
-<footer>ULusófona, 2023</footer>
+
+    </header>
+
+    <main>
+        {% block main %}
+        {% endblock main %}
+    </main>
+
+    <footer>
+        <p>find me in:</p>
+        <i class="ri-linkedin-fill" id="icon-footer"></i>
+        <i class="ri-github-fill" id="icon-footer"></i>
+
+    </footer>
+
+</body>
