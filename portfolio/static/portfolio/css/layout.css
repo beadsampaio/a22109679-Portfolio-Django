@@ -8,6 +8,7 @@
             text-decoration: none;
         }
 
+
         header {
             position: relative;
             background-color: #011627;
@@ -16,30 +17,48 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            height: 70px;
+            height: 10%;
+            border: 2px solid green;
+            margin-top: 1%;
         }
 
         .logo {
             display: flex;
-            width: 230px;
-            height: 50px;
+            width: 50%;
+            height: 50%;
             left: 33px;
             top: 32px;
-            padding-left: 3%;
+            margin-left: 3%;
+            align-content: center;
+            border: 2px solid purple;
         }
 
         .logo h3 {
+            width: 40%;
+            height: 80%;
             font-family: 'Fira Code';
             font-style: normal;
             font-weight: 450;
-            font-size: 16px;
+            font-size: 100%;
             line-height: 21px;
-            padding-left: 15px;
+
+            border: 2px solid wheat;
         }
 
         .menu {
-            padding-right: 3%;
-            align-content: flex-end;
+
+            width: 5%;
+            height: 50%;
+
+
+
+            margin-right: 3%;
+            border: 2px solid gray;
+        }
+
+        .bars {
+            height: max-content;
+            fill: #607B96;
         }
 
         nav {
@@ -72,6 +91,14 @@
         }
 
         /*home.html*/
+
+    .main-home {
+        border: 2px solid red;
+        margin-left: 5%;
+        margin-bottom: 10%;
+        width: 90%;
+        height: 80%;
+    }
 
     #hi {
         position: absolute;
