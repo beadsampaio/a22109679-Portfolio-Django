@@ -12,54 +12,14 @@
     <link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
-
-        * {
-            box-sizing: border-box;
-            font-family: 'Fira Code', monospace;
-            background-color: #011627;
-            color: #607B96;
-        }
-
-        header {
-            background-color: #011627;
-            /*ja tinha*/
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-
-        .footer-divider {
-            position: absolute;
-            width: 0px;
-            height: 1000px;
-            left: 500px;
-            top: 40px;
-            border: 2px solid #1E2D3D;
-            transform: rotate(90deg);
-        }
-
-        main {
-            background-color: #011627;
-        }
-
-        p {
-            color: #607B96;
-        }
-
-        #icon-footer {
-            padding: 10px;
-            color: #607B96;
-        }
-
-    </style>
 
 </head>
 <body>
     <header>
-        <div>beatriz-sampaio</div>
+        <div class="logo">
+            <h3>beatriz-sampaio</h3>
+        </div>
+        <div class="menu"><i class="ri-menu-line"></i></div>
 
         <nav>
             <a href="{% url 'portfolio:home' %}">_hello</a>
@@ -68,6 +28,7 @@
             <a href="{% url 'portfolio:contact' %}">_contact-me</a>
         </nav>
 
+        <hr class="footer-divider" />
 
     </header>
 
@@ -76,11 +37,11 @@
         {% endblock main %}
     </main>
 
-    <footer>
+ <!-- <footer>
         <p>find me in:</p>
         <i class="ri-linkedin-fill" id="icon-footer"></i>
         <i class="ri-github-fill" id="icon-footer"></i>
 
-    </footer>
+    </footer> -->
 
 </body>
