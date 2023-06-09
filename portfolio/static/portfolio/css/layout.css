@@ -70,3 +70,88 @@
             padding: 10px;
 
         }
+
+        /*home.html*/
+
+    #hi {
+        position: absolute;
+        width: 141px;
+        height: 24px;
+        left: 42px;
+        top: 190px;
+        font-family: 'Fira Code';
+        font-style: normal;
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 24px;
+        color: #E5E9F0;
+    }
+
+    #beatriz {
+        position: absolute;
+        width: 291px;
+        height: 124px;
+        left: 42px;
+        top: 201px;
+        font-family: 'Fira Code';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 62px;
+        line-height: 100%;
+        color: #E5E9F0;
+    }
+
+     #job {
+        position: absolute;
+        width: 273px;
+        height: 26px;
+        left: 42px;
+        top: 360px;
+        font-family: 'Fira Code';
+        font-style: normal;
+        font-weight: 450;
+        font-size: 20px;
+        line-height: 26px;
+        color: #43D9AD;
+     }
+
+     #profile {
+        position: absolute;
+        width: 267px;
+        height: 20px;
+        left: 42px;
+        top: 551px;
+        font-family: 'Fira Code';
+        font-style: normal;
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 140%;
+        color: #607B96;
+
+     }
+
+     #git {
+        position: absolute;
+        width: 273px;
+        height: 40px;
+        left: 42px;
+        top: 587px;
+        font-family: 'Fira Code';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+
+     }
+
+     #const {
+        color: #4D5BCE;
+     }
+
+     #github-link {
+        color: #43D9AD;
+     }
+
+     #link, #link a {
+        color: #FEA55F;
+     }

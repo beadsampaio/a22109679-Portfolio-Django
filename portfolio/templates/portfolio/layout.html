@@ -31,17 +31,18 @@
 
 
     </header>
-<hr class="footer-divider" />
+        <!-- <hr class="footer-divider" /> -->
     <main>
         {% block main %}
         {% endblock main %}
     </main>
 
- <!-- <footer>
-        <p>find me in:</p>
-        <i class="ri-linkedin-fill" id="icon-footer"></i>
-        <i class="ri-github-fill" id="icon-footer"></i>
-
-    </footer> -->
+    <footer>
+        {% block footer %}
+            <p>find me in:</p>
+            <i class="ri-linkedin-fill" id="icon-footer"></i>
+            <i class="ri-github-fill" id="icon-footer"></i>
+        {% endblock footer %}
+    </footer>
 
 </body>
