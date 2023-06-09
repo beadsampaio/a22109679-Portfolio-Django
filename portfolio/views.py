@@ -8,6 +8,9 @@ from django.shortcuts import render
 def home_page_view(request):
     return render(request, 'portfolio/home.html')
 
+def menu_page_view(request):
+    return render(request, 'portfolio/menu.html')
+
 def about_page_view(request):
     return render(request, 'portfolio/about.html')
 

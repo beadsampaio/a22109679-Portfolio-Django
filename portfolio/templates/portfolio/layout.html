@@ -19,7 +19,11 @@
         <div class="logo">
             <h3>beatriz-sampaio</h3>
         </div>
-        <div class="menu"><i class="ri-menu-line"></i></div>
+        <div class="menu">
+            {% block icon %}
+                <a href="{% url 'portfolio:menu' %}"><i class="ri-menu-line"></i></a>
+            {% endblock icon %}
+        </div>
 
         <nav>
             <a href="{% url 'portfolio:home' %}">_hello</a>

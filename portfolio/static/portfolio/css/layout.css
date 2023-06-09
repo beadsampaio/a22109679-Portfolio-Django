@@ -77,8 +77,8 @@
         position: absolute;
         width: 141px;
         height: 24px;
-        left: 42px;
-        top: 190px;
+        left: 8%;
+        top: 28%;
         font-family: 'Fira Code';
         font-style: normal;
         font-weight: 450;
@@ -91,8 +91,8 @@
         position: absolute;
         width: 291px;
         height: 124px;
-        left: 42px;
-        top: 201px;
+        left: 8%;
+        top: 30%;
         font-family: 'Fira Code';
         font-style: normal;
         font-weight: 400;
@@ -105,8 +105,8 @@
         position: absolute;
         width: 273px;
         height: 26px;
-        left: 42px;
-        top: 360px;
+        left: 8%;
+        top: 40%;
         font-family: 'Fira Code';
         font-style: normal;
         font-weight: 450;
@@ -119,8 +119,8 @@
         position: absolute;
         width: 267px;
         height: 20px;
-        left: 42px;
-        top: 551px;
+        left: 8%;
+        top: 55%;
         font-family: 'Fira Code';
         font-style: normal;
         font-weight: 450;
@@ -134,8 +134,8 @@
         position: absolute;
         width: 273px;
         height: 40px;
-        left: 42px;
-        top: 587px;
+        left: 8%;
+        top: 57%;
         font-family: 'Fira Code';
         font-style: normal;
         font-weight: 500;
