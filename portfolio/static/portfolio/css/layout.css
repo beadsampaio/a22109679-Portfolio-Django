@@ -25,9 +25,8 @@
         .logo {
             display: flex;
             width: 50%;
-            height: 50%;
-            left: 33px;
-            top: 32px;
+            height: 100%;
+
             margin-left: 3%;
             align-content: center;
             border: 2px solid purple;
@@ -51,13 +50,12 @@
             height: 50%;
 
 
-
             margin-right: 3%;
             border: 2px solid gray;
         }
 
         .bars {
-            height: max-content;
+            height: fit-content;
             fill: #607B96;
         }
 
