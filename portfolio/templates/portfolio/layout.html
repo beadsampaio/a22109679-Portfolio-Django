@@ -15,26 +15,24 @@
     <script src="https://use.fontawesome.com/your-embed-code.js"></script>
 
 </head>
-<body>
+<body class="grid-container-page">
+
     <header>
-        <div class="logo">
-            <h3>beatriz-sampaio</h3>
-        </div>
-        <div class="menu">
-            <svg class="bars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
-        </div>
 
         <nav>
-            <a href="{% url 'portfolio:home' %}">_hello</a>
-            <a href="{% url 'portfolio:about' %}">_about-me</a>
-            <a href="{% url 'portfolio:projects' %}">_projects</a>
-            <a href="{% url 'portfolio:contact' %}">_contact-me</a>
+            <div class="grid-container-header">
+                <div class="grid-item logo">beatriz-sampaio</div>
+                <div class="grid-item page"><a href="{% url 'portfolio:home' %}">_hello</a></div>
+                <div class="grid-item page"><a href="{% url 'portfolio:about' %}">_about-me</a></div>
+                <div class="grid-item page"><a href="{% url 'portfolio:projects' %}">_projects</a></div>
+                <div class="grid-item space-header"></div>
+                <div class="grid-item page"><a href="{% url 'portfolio:contact' %}">_contact-me</a></div>
+            </div>
+
         </nav>
-
-
-
+        <div class="divider"></div>
     </header>
-        <!-- <hr class="footer-divider" /> -->
+
     <main>
         {% block main %}
         {% endblock main %}
@@ -42,9 +40,14 @@
 
     <footer>
         {% block footer %}
-            <p>find me in:</p>
-            <i class="ri-linkedin-fill" id="icon-footer"></i>
-            <i class="ri-github-fill" id="icon-footer"></i>
+            <div class="grid-container-footer">
+                <div class="grid-item find-me">find me in:</div>
+                <div class="grid-item icon"><i class="ri-linkedin-fill" id="icon-footer"></i></div>
+                <div class="grid-item icon"><i class="ri-github-fill" id="icon-footer"></i></div>
+                <div class="grid-item space-footer"></div>
+                <div class="grid-item darkmode">darkmode</div>
+                <div class="grid-item darkmode">date</div>
+            </div>
         {% endblock footer %}
     </footer>
 
