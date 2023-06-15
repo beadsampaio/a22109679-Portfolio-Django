@@ -3,13 +3,139 @@
 
 
 {% extends 'portfolio/layout.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
 
 
 
 {% block main %}
-    <h3>Contact</h3>
-    <p>texto texto texto texto texto texto texto </p>
 
-    {% load static %}
-    <img src="{% static 'portfolio/images/imagem.png' %}">
+<div class="grid-container-main-contact">
+
+
+        <div class="grid-container-text-contact">
+
+
+
+         <h1 class="heading">Sobre Este Website</h1>
+         <h2>Estrutura do website:</h2>
+        <p> O Website é constituido por 6 páginas (Home, About me, Projetos , Programação Web).
+            Foi desenvolvido em Html, CSS , Django e Python.
+            É possível observar todas as informações referentes à Licencitatura (Descrição Cadeira e Projetos),
+            um breve apresentação sobre mim.
+            O Principal objetivo do website é demonstratar os conhecimentos que adquiri ao longo de semestre.
+        </p>
+
+
+
+
+    <h3 class="heading">Tecnologias Utilizadas</h3>
+    <div class="container">
+     <div class="caixas">
+        {% for tecnologiawebsite  in tecnologiawebsites %}
+            <div>
+                <h3> <a href="{{tecnologiawebsite.link}}" target="_blank">{{tecnologiawebsite.nome}} ({{tecnologiawebsite.acronimo}})</a></h3>
+                <ul>
+                    <li><b>Ano Criação: </b>{{tecnologiawebsite.anoCriacao}}</li>
+                    <li><b>Criador: </b>{{tecnologiawebsite.criador}}</li>
+                </ul>
+                <p>{{tecnologiawebsite.descricao}}</p><br>
+            </div>
+        {% endfor %}
+     </div>
+    </div>
+
+
+    <h2 class="heading">Laboratórios PW</h2>
+    <div class="container">
+    <div class="caixas">
+        {% for laboratorio  in laboratorios %}
+            <div>
+                <h3><a href="{{laboratorio.link}}" target="_blank">{{laboratorio.titulo}}</a></h3>
+                <p>{{laboratorio.descricao}}</p><br>
+            </div>
+        {% endfor %}
+    </div>
+
+<div class="parallax"></div>
+
+
+        </div>
+
+            <div class="svg-img">
+
+              <div id="container">
+                  {% load static %}
+                <img src="{% static 'portfolio/images/snow.jpg' %}" alt="Background Image">
+                <div id="overlay">
+                  <p id="sentence">Enter a sentence:</p>
+                  <input type="text" id="sentenceInput" placeholder="Type your sentence...">
+                </div>
+              </div>
+
+            <div class="svg-element">
+            <svg width="300" height="200">
+                <polygon points="100,10 40,198 190,78 10,78 160,198"
+                style="fill:violet;stroke:blueviolet;stroke-width:5;fill-rule:evenodd;" />
+              </svg>
+        </div>
+</div>
+            <div class="parallax"></div>
+
+      <div id="nameSection">
+        <h2>Enter Your Name:</h2>
+        <input type="text" id="nameInput" placeholder="Your name">
+        <div id="nameDisplay"></div>
+      </div>
+
+     <script> // Overlay functionality
+            var sentenceInput = document.getElementById("sentenceInput");
+            var overlay = document.getElementById("overlay");
+            var sentence = document.getElementById("sentence");
+
+            sentenceInput.addEventListener("input", function() {
+              sentence.textContent = sentenceInput.value;
+            });
+
+            // Name display
+            var nameInput = document.getElementById("nameInput");
+            var nameDisplay = document.getElementById("nameDisplay");
+
+            nameInput.addEventListener("input", function() {
+              nameDisplay.innerHTML = "";
+              for (var i = 0; i < 3; i++) {
+                var nameSpan = document.createElement("span");
+                nameSpan.textContent = nameInput.value;
+                nameDisplay.appendChild(nameSpan);
+              }
+            });
+
+            // Mouseover and Mouseout actions
+            var container = document.getElementById("container");
+            container.addEventListener("mouseover", function() {
+              container.style.border = "2px solid red";
+            });
+
+            container.addEventListener("mouseout", function() {
+              container.style.border = "none";
+            });
+     </script>
+
+
+
+
+        <div class="parallax"></div>
+
+        <div class="iframe">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-x6N1qaVWho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+
+        </div>
+
+    </div>
+
+
 {% endblock %}

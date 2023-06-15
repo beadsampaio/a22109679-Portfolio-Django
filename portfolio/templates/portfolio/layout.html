@@ -11,44 +11,54 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
-
-    <script src="https://use.fontawesome.com/your-embed-code.js"></script>
-
+    <script src="{% static 'portfolio/js/base.js' %}"></script>
 </head>
 <body class="grid-container-page">
 
-    <header>
+<header>
 
-        <nav>
-            <div class="grid-container-header">
-                <div class="grid-item logo">beatriz-sampaio</div>
-                <div class="grid-item page"><a href="{% url 'portfolio:home' %}">_hello</a></div>
-                <div class="grid-item page"><a href="{% url 'portfolio:about' %}">_about-me</a></div>
-                <div class="grid-item page"><a href="{% url 'portfolio:projects' %}">_projects</a></div>
-                <div class="grid-item space-header"></div>
-                <div class="grid-item page"><a href="{% url 'portfolio:contact' %}">_contact-me</a></div>
+    <nav>
+        <div class="grid-container-header">
+            <div class="grid-item logo">
+                beatriz-sampaio
+                <img src="{% static 'portfolio/images/sun.png' %}" id="toggleDark">
             </div>
+            <div class="grid-item page"><a href="{% url 'portfolio:home' %}">_hello</a></div>
+            <div class="grid-item page"><a href="{% url 'portfolio:about' %}">_about-me</a></div>
+            <div class="grid-item page"><a href="{% url 'portfolio:projects' %}">_projects</a></div>
+            <div class="grid-item space-header"></div>
+            <div class="grid-item page"><a href="{% url 'portfolio:contact' %}">_p_web</a></div>
+        </div>
 
-        </nav>
-        <div class="divider"></div>
-    </header>
+    </nav>
+    <div class="divider"></div>
+</header>
 
-    <main>
-        {% block main %}
-        {% endblock main %}
-    </main>
+<main>
+    {% block main %}
+    {% endblock main %}
+</main>
 
-    <footer>
-        {% block footer %}
-            <div class="grid-container-footer">
-                <div class="grid-item find-me">find me in:</div>
-                <div class="grid-item icon"><i class="ri-linkedin-fill" id="icon-footer"></i></div>
-                <div class="grid-item icon"><i class="ri-github-fill" id="icon-footer"></i></div>
-                <div class="grid-item space-footer"></div>
-                <div class="grid-item darkmode">darkmode</div>
-                <div class="grid-item darkmode">date</div>
+<footer>
+    {% block footer %}
+        <div class="grid-container-footer">
+            <div class="grid-item find-me">find me in:</div>
+            <div class="grid-item icon"><a href="https://www.linkedin.com/in/beatriz-sampaio-85bb81221/"> <i class="ri-linkedin-fill" id="icon-footer"></i></a></div>
+            <div class="grid-item icon"><a href="https://github.com/beadsampaio"><i class="ri-github-fill" id="icon-footer"></i></a></div>
+            <div class="grid-item icon"><a href="mailto: beatrizdsampaio@gmail.com"><i class="ri-mail-fill"></i></a></div>
+            <div class="grid-item space-footer"></div>
+            <div class="grid-item data-hour hours">horas</div>
+            <div class="grid-item data-hour">
+                <script>
+                    var data = new Date();
+                    var formato = {year: 'numeric', month: 'long', day: 'numeric'};
+                    document.write(data.toLocaleDateString('pt-BR', formato));
+                </script>
             </div>
-        {% endblock footer %}
-    </footer>
+            <div class="grid-item login"><a href="{% url 'portfolio:login' %}"><i class="ri-login-box-fill"> </i></a></div>
+
+        </div>
+    {% endblock footer %}
+</footer>
 
 </body>

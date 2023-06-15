@@ -3,12 +3,59 @@
 
 
 {% extends 'portfolio/layout.html' %}
-
+{% load static %}
 
 {% block main %}
-    <h3>Projects</h3>
-    <p>texto texto texto texto texto texto texto </p>
-
-    {% load static %}
-    <img src="{% static 'portfolio/images/imagem.png' %}">
+    <div class="scroll">
+   <h1 class="heading">Projetos</h1>
+    <h3>Realizados por mim:</h3>
+        <div class="container-projetos">
+            <div class = "caixas">
+            {% for projeto in projetos %}
+            <div>
+                <h3>{{projeto.titulo}}</h3><br>
+                <p>{{projeto.descricao}}</p><br>
+                <ul>
+                    <li><b>Ano Realização: </b>{{projeto.ano_realizacao}}</li>
+                    <li><b>Participantes: </b>{% for participante in projeto.participantes.all %}{{participante.nome}}; {% endfor %}</li>
+                    <li><b>Tecnologias: </b>{% for tecnologia in projeto.tecnologias.all %}{{tecnologia.nome}}; {% endfor %}</li>
+                    {% if projeto.linkGitHub is not None %}
+                        <a href ="{{projeto.link_github |default_if_none:'#'}}">Link GitHub</a>
+                    {% endif %}
+                {% if projeto.linkGitHub is not None %}
+                        <a href ="{{projeto.link_youtube |default_if_none:'#'}}">Link YouTube</a>
+                    {% endif %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+ </div>
+    <h3 class="heading">Trabalhos Finais de Curso interessantes </h3>
+    <p>Em baixo são apresentados trabalhos finais de curso de colegas do 3º Ano, foi-me disponibilizada uma lista com todos os trabalhos
+    desenvolvidos e após a consulta, considerei que estes 6 tfcs eram aqueles que eu mais gostei e me identifiquei</p>
+    <div class="container-tfcs">
+             <div class = "caixas">
+        {% for tfc in tfcs %}
+        <div>
+            <h3>{{tfc.titulo}}</h3><br>
+            <p>{{tfc.sumario}}</p><br>
+            <ul>
+                <li><b>Ano Realização: </b>{{tfc.anoRealizacao}}</li>
+                <li><b>Autores: </b>{% for autor in tfc.autor.all %}{{autor.nome}}; {% endfor %}</li>
+                <li><b>Orientador: </b>{% for orientador in tfc.orientador.all %}{{orientador.nome}}; {% endfor %}</li>
+                {% if tfc.link_relatorio is not None %}
+                    <a href ="{{tfc.link_relatorio}}" target="_blank">Link Relatório</a><br>
+                {% endif %}
+                {% if tfc.link_github is not None %}
+                    <a href ="{{tfc.link_github}}" target="_blank">Link GitHub</a><br>
+                {% endif %}
+                {% if tfc.link_youtube is not None %}
+                <a href ="{{tfc.link_youtube}}" target="_blank">Link Vídeo</a><br>
+                {% endif %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+     </div>
+    </div>
 {% endblock %}

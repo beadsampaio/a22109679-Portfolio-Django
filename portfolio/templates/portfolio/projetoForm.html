@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Form</title>
+</head>
+<body>
+
+
+    <div class="container-form">
+
+        <div class="title">Nova Projeto</div>
+
+        <form method="post" action="#">
+            {% csrf_token %} <!-- para segurança -- sao intruções/formatação -->
+
+            {{ form.as_p }} <!-- dois parenteses sao variaveis de template -->
+            <input type="submit" value="Save">
+
+        </form>
+    </div>
+
+
+
+</body>
+</html>

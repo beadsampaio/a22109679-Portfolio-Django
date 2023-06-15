@@ -3,12 +3,94 @@
 
 
 {% extends 'portfolio/layout.html' %}
-
+{% load static %}
 
 {% block main %}
-    <h3>About</h3>
-    <p>texto texto texto texto texto texto texto </p>
+    <div class="grid-container-main-about">
+        <div class="grid-container-icon-about">
+            <i class="ri-terminal-box-fill"></i>
+            <i class="ri-gamepad-fill"></i>
+        </div>
 
-    {% load static %}
-    <img src="{% static 'portfolio/images/imagem.png' %}">
+        <div class="grid-container-menu-about">
+
+
+            <div id="dropdown" class="personal-info-about">
+                <div class="dropbtn"><i class="ri-arrow-right-s-line"></i> personal-info</div>
+                <nav class="nav">
+                    <ul class="navegacao">
+                        <li class="bio"><a href="{% url 'portfolio:about' %}">bio</a></li>
+                        <li class="interests"><a href="{% url 'portfolio:interesses' %}">interests</a></li>
+                        <li class="education"><a {% url 'portfolio:education' %}>education</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+        <div class="grid-container-text-about">
+
+            <div class="grid-item-text-about tab">personal-info <i class="ri-close-fill"></i></div>
+            <div class="grid-item-text-about empty-tab"></div>
+            <div class="grid-item-text-about text-about-content">
+                {% block text-about-content %}
+                    /** </br>
+                    * About me </br>
+                    * Hi, I'm a second-year college student who is passionate about skiing, programming, and animals. I'm pursuing a degree in Management IT and am determined to become a successful software developer. When I'm not immersed in the world of programming, you can find me on the mountains, skiing and enjoying the adrenaline and beauty of nature. With a versatile and passionate personality, I'm constantly seeks new challenges and opportunities to grow and make a difference in my field of study and in causes that are important to me.</br>
+
+
+
+
+                {% endblock %}
+            </div>
+
+        </div>
+
+        <div class="grid-container-blog-about">
+         <div class="grid-item-text-about tab"></div>
+            <div class="grid-item-blog-about empty-space"></div>
+            <div class="grid-item-blog-about blog-about-content">
+                {% block blog-about-content %}
+
+                    <div class="scroll2">
+
+                     <h2 class="heading">Aptidões e competências pessoais</h2>
+
+                        <div class="competencias">
+                          {% for competencia in competencias %}
+                               <div class = "caixas">
+                            <div>
+                                <h3>{{competencia.titulo}}</h3>
+                                <p>{{competencia.descricao}}</p>
+                                <p><b>Projetos: </b>{% for projeto in competencia.projetos.all %} <a href="{% url 'portfolio:projects' %}"> {{projeto.titulo}}</a> {% endfor %}</p>
+                                <p><b>Cadeira: </b>{% for cadeira in competencia.cadeira.all %} <a href="{{cadeira.link_cadeira}}">{{cadeira.nome}};</a> {% endfor %}</p>
+                            </div>
+                               </div>
+                          {% endfor %}
+
+                        </div>
+
+
+
+                        <h2 class="heading">Línguas</h2>
+                        <div class="linguas">
+                          {% for lingua in linguas %}
+                              <div class = "caixas">
+                            <div>
+                                <h3>{{lingua.nome}}</h3>
+                                <p><b>Nível: </b>{{lingua.nivel}}</p>
+                            </div>
+                              </div>
+                          {% endfor %}
+
+
+                    </div>
+
+
+                {% endblock %}
+            </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

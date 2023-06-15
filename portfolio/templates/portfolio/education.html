@@ -1,0 +1,61 @@
+<!-- education.html -->
+
+
+
+{% extends 'portfolio/about.html' %}
+{% load static %}
+
+
+{% block text-about-content %}
+
+
+    <h2 class="heading">Educação</h2>
+    <div class="educacao">
+     <div class = "caixas">
+      {% for educacao in educations %}
+        <div>
+            <img src="{{educacao.logotipo.url}}" class="logo_escola">
+            <h3>{{educacao.tipo_formacao}}</h3>
+            <ul>
+              <li><b>Período: </b>{{educacao.periodo}}</li>
+              <li><b>Curso: </b>{{educacao.curso}}</li>
+              <li><b>Local: </b>{{educacao.local}}</li>
+            </ul>
+        </div>
+      {% endfor %}
+    </div>
+     </div>
+
+
+
+
+
+{% endblock %}
+
+{% block blog-about-content %}
+<div class="scroll2">
+<h2 class="heading">Cadeiras Licenciatura</h2>
+  <div class="for-cadeiras">
+     <div class = "caixas">
+      {% for cadeira in cadeiras %}
+      <div>
+          <h3>{{cadeira.nome}}</h3>
+            <ul>
+              <li><b>Ano: </b>{{cadeira.ano}}</li>
+              <li><b>Semestre: </b>{{cadeira.semestre}}</li>
+              <li><b>Número de ECTS: </b>{{cadeira.ects}}</li>
+              <li><b>Ano Letivo Frequentado: </b> {{cadeira.ano_letivo}}</li>
+              <li><b>Tópicos abordados: </b>{{cadeira.topicos_abordados}} </li>
+              <li><b>Linguagens: </b>{% for language in cadeira.linguagens.all %}{{language.nome}} {% endfor %}</li>
+              <li><b>Ranking (0-5): </b>{{cadeira.ranking}}</li>
+              <li><b>Professor Teórica: </b><a href="{{cadeira.docente_teorica.link_lusofona}}"> <i>{{cadeira.docente_teorica.nome}}</i></a></li>
+              <li><b>Professores Práticas: </b>{% for docente_pratica in cadeira.docentes_praticas.all %}<a href="{{docente_pratica.link_lusofona}}"> {{docente_pratica.nome}}; </a> {% endfor %}</li>
+              <li><b><a href="{{cadeira.link_cadeira}}"><i>Link da Cadeira</i></a></b></li>
+              <li><b>Projetos: </b>{% for projeto in cadeira.projetos.all %}<a href="{% url 'portfolio:projects' %}"> {{projeto.titulo}}</a> {% endfor %}</li>
+          </ul>
+      </div><br>
+      {% endfor %}
+</div>
+    </div>
+    </div>
+{% endblock %}

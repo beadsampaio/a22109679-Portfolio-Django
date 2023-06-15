@@ -1,0 +1,23 @@
+<!-- home.html -->
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+
+{% block main %}
+
+
+    <h1>Welcome, {{ request.user.username }}</h1>
+
+    <ul>
+        <li><a href="{% url 'portfolio:cadeiraForm' %}">Nova Cadeira</a></li>
+        <li><a href="{% url 'portfolio:projetoForm' %}">Novo Projeto</a></li>
+        <li><a href="{% url 'portfolio:tfcForm' %}">Novo TFC</a></li>
+    </ul>
+
+    <a href="{% url 'portfolio:logout' %}">Log out</a>
+
+{% endblock %}
+
+

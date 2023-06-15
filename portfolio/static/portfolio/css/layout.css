@@ -1,218 +1,29 @@
  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
 
-    /*    * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-            text-decoration: none;
-            list-style: none;
-            font-family: 'Fira Code', monospace;
-            background-color: #011627;
-            color: #607B96;
-        }
-
-         body {
-
-         }
-
-
-        header {
-           /* margin-top: 1%;
-            position: absolute;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            height: 10%; *
-            height: 100vh;
-            width: 100vw;
-
-            border: 2px solid green;
-        }
-
-        .navbar {
-            position: absolute;
-            padding: 50px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            box-sizing: border-box;
-
-
-            border: 2px solid cadetblue;
-        }
-
-        .logo {
-            display: flex;
-            width: 40%;
-            height: 100%;
-            margin-left: 3%;
-            align-content: center;
-            font-size: 2em;
-
-            border: 2px solid orangered;
-        }
-
-        .nav-links ul {
-            display: flex;
-
-            border: 2px solid pink;
-        }
-
-
-
-        .logo h3 {
-            position: relative;
-            width: 100%;
-            height: 80%;
-
-            font-size: 100%;
-
-            border: 2px solid wheat;
-        }
-
-        .menu {
-            position: relative;
-            width: 5%;
-            height: 5%;
-
-            margin-right: 10%;
-
-
-            border: 2px solid gray;
-        }
-
-        .bars {
-            height: max-content;
-
-            fill: #607B96;
-        }
-
-
-
-
-        .footer-divider {
-            position: absolute;
-            width: 0px;
-            height: 100%;
-            left: 500px;
-            padding-top: 0px;
-            border: 2px solid #1E2D3D;
-            transform: rotate(90deg);
-            bottom: 0;
-        }
-
-        main {
-            background-color: #011627;
-        }
-
-        p {
-            color: #607B96;
-        }
-
-        #icon-footer {
-            padding: 10px;
-
-        }
-
-        /home.html*
-
-    .main-home {
-        position: absolute;
-        border: 2px solid red;
-        margin-left: 5%;
-        margin-bottom: 10%;
-        width: 90%;
-        height: 80%;
-    }
-
-    #hi {
-        position: absolute;
-        width: 141px;
-        height: 24px;
-        left: 8%;
-        top: 28%;
-        font-style: normal;
-        font-weight: 450;
-        font-size: 18px;
-        line-height: 24px;
-        color: #E5E9F0;
-    }
-
-    #beatriz {
-        position: absolute;
-        width: 291px;
-        height: 124px;
-        left: 8%;
-        top: 30%;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 62px;
-        line-height: 100%;
-        color: #E5E9F0;
-    }
-
-     #job {
-        position: absolute;
-        width: 273px;
-        height: 26px;
-        left: 8%;
-        top: 40%;
-        font-style: normal;
-        font-weight: 450;
-        font-size: 20px;
-        line-height: 26px;
-        color: #43D9AD;
-     }
-
-     #profile {
-        position: absolute;
-        width: 267px;
-        height: 20px;
-        left: 8%;
-        top: 55%;
-        font-style: normal;
-        font-weight: 450;
-        font-size: 14px;
-        line-height: 140%;
-        color: #607B96;
-
-     }
-
-     #git {
-        position: absolute;
-        width: 273px;
-        height: 40px;
-        left: 8%;
-        top: 57%;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 140%;
-
-     }
-
-     #const {
-        color: #4D5BCE;
-     }
-
-     #github-link {
-        color: #43D9AD;
-     }
-
-     #link, #link a {
-        color: #FEA55F;
-     }*/
-
     * {
         padding: 0;
         margin: 0;
         text-decoration: none;
         list-style: none;
         font-family: 'Fira Code', monospace;
-        background-color: #011627;
-        color: #607B96;
-        font-size: large;
+        background-color: var(--main-color);
+        color: var(--first-color);
+        font-size: 1vw;
+    }
+
+    :root {
+        --main-color: #011627;
+        --first-color: #607B96;
+
+    }
+
+    .darkmode {
+        --main-color: beige;
+        --first-color: black;
+    }
+
+    i{
+        cursor: pointer;
     }
 
     .grid-container-page {
@@ -222,7 +33,7 @@
             "header"
             "main"
             "footer";
-        grid-row-gap: 5px;
+        grid-row-gap: 1px;
 
     }
 
@@ -230,7 +41,7 @@
 
     .grid-container-header {
         display: grid;
-        grid-template-columns: 1.5fr repeat(3, 1fr) 2.5fr 1fr;
+        grid-template-columns: 1.5fr repeat(3, 1fr) 2fr 1fr;
         grid-area: header;
 
       /*  border: 2px solid green;*/
@@ -242,23 +53,31 @@
         align-items: center;
         height: 5vh;
 
-       /* border: 2px solid red;*/
+
     }
 
     .logo {
-        border-bottom: 2px solid #1E2D3D;
+        border-bottom: 1px solid var(--first-color);
     }
 
     .page, .space-header {
-        border-left: 2px solid #1E2D3D;
-        border-bottom: 2px solid #1E2D3D;
+
+        border-left: 1px solid var(--first-color);
+        border-bottom: 1px solid var(--first-color);
     }
+
+    #toggleDark {
+        padding-left: 1vw;
+        height: 1vw;
+        cursor: pointer;
+    }
+
 
         /* FOOTER */
 
     .grid-container-footer {
         display: grid;
-        grid-template-columns: 0.75fr repeat(2, 0.25fr) 2.5fr 1fr 1fr;
+        grid-template-columns: 0.75fr repeat(3, 0.25fr) 2.75fr 1fr 1.5fr 0.25fr;
         grid-template-rows: 5vh;
         grid-area: footer;
 
@@ -270,41 +89,54 @@
         justify-content: center;
         align-items: center;
 
-       /* border: 2px solid red;*/
+    }
+
+    .icon, .find-me, .space-footer, .hours ,.data-hour{
+         border-top: 1px solid var(--first-color);
+         border-right: 1px solid var(--first-color);
+    }
+
+    .login {
+         border-top: 1px solid var(--first-color);
     }
 
 
         /* MAIN HOME */
 
+    .grid-container-main-home{
+        display: grid;
+        grid-area: main;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "text-home calculadora-home";
 
+    }
 
-    .grid-container-main-home {
+    .grid-container-text-home {
         display: grid;
         height: 88vh;
         grid-template-rows: 2fr 1fr 2.5fr 1fr 1.5fr repeat(2, 1fr);
-        grid-area: main;
+        grid-area: text-home;
 
-
-
-     /*border: 2px solid green;*/
     }
 
     .grid-item-main-home {
 
+        position: relative;
+        padding-left: 5vw;
         display: flex;
-        justify-content: center;
+        align-items: center;
 
-
-       /* border: 2px solid red;*/
     }
 
     .divider {
         margin-block: 25px;
         border: none;
-        border-top: 2px solid #1E2D3D;
+        border-top: 1px solid var(--first-color);
     }
 
     .hi, .job {
+
         font-size: 2vw;
     }
 
@@ -315,5 +147,382 @@
     .profile, .git {
         font-size: 1vw;
     }
+
+     #const {
+        color: #4D5BCE;
+         padding-right: 1vw;
+     }
+
+     #github-link {
+         padding-right: 1vw;
+        color: #43D9AD;
+     }
+
+     #link, #link a {
+        color: #FEA55F;
+     }
+
+     #link {
+         padding-left: 1vw;
+     }
+
+     .grid-container-calculadora-home {
+        display: grid;
+        height: 88vh;
+        grid-template-rows: 2fr 1fr 2.5fr 1fr 1.5fr repeat(2, 1fr);
+        grid-area: calculadora-home;
+    }
+
+    .calculator {
+  width: 200px;
+  margin: 5vh auto;
+  text-align: center;
+}
+
+#result {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: right;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+
+
+     /* MAIN ABOUT*/
+
+    .grid-container-main-about{
+        display: grid;
+        grid-area: main;
+        grid-template-columns: 0.25fr 1.25fr repeat(2, 3fr);
+        height: 92vh;
+        grid-template-areas:
+        "icon-about menu-about text-about blog-about";
+
+    }
+
+    .grid-container-icon-about {
+        display: flex;
+        flex-direction: column;
+
+        grid-area: icon-about;
+        border-right: 1px solid var(--first-color);
+    }
+    .grid-container-icon-about i {
+        margin: 3vh 1vw 3vh 1vw ;
+    }
+
+    .grid-container-menu-about {
+        display: grid;
+        grid-template-rows: 5vh 25vh;
+        grid-template-areas:
+            "dropbtn"
+            "nav-personal-info";
+        grid-area: menu-about;
+        border-right: 1px solid var(--first-color);
+    }
+
+        /*DROPDOWN 1*/
+
+    .dropbtn {
+        grid-area: dropbtn;
+        display: block;
+        cursor: pointer;
+        padding: 1vh;
+        border-bottom: 1px solid var(--first-color);
+    }
+
+
+    .nav{
+        grid-area: nav-personal-info;
+
+        transition: 0.2s;
+        overflow: hidden;
+    }
+
+    nav.active{
+        height: 450px;
+    }
+
+    .nav ul{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 5vh);
+        grid-template-areas:
+            "bio"
+            "interests"
+            "education";
+        place-content: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .bio {
+        grid-area: bio;
+
+    }
+    .interests {
+        grid-area: interests;
+    }
+    .education {
+        grid-area: education;
+        cursor: pointer;
+        border-bottom: 1px solid var(--first-color);
+    }
+
+    .navegacao li {
+         border-bottom: 1px solid var(--first-color);
+    }
+
+    .nav.active ul{
+        opacity: 1;
+    }
+
+    .nav ul li a{
+        display: block;
+        padding: 1vh;
+
+    }
+
+
+
+
+    .grid-container-text-about {
+        grid-area: text-about;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 5vh 70vh;
+        grid-template-areas:
+            "tab empty-tab"
+            "text-about-content text-about-content";
+
+        border-right: 1px solid var(--first-color);
+    }
+
+    .tab {
+        grid-area: tab;
+        display: block;
+        padding: 1vh;
+        border-bottom: 1px solid var(--first-color);
+    }
+    .empty-tab {
+        grid-area: empty-tab;
+        display: block;
+        padding: 1vh;
+        border-bottom: 1px solid var(--first-color);
+        border-left: 1px solid var(--first-color);
+    }
+
+    .text-about-content {
+        grid-area: text-about-content;
+        padding: 1vw;
+        display: inline-block;
+        max-width: 40vw;
+        overflow-wrap: break-word
+    }
+
+
+
+
+
+    .grid-container-blog-about {
+        grid-area: blog-about;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 5vh 70vh;
+        grid-template-areas:
+            "tab empty-space"
+            "blog-about-content blog-about-content";
+
+    }
+
+    .empty-space {
+        grid-area: empty-space;
+        display: block;
+        padding: 1vh;
+        border-bottom: 1px solid var(--first-color);
+    }
+
+    .blog-about-content {
+        grid-area: blog-about-content;
+
+
+    }
+
+    .scroll {
+        height: 90vh;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .scroll2 {
+        height: 85vh;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+
+
+    /*EDUCATION*/
+
+     .logo_escola {
+         height: 6vh;
+         width: 10vw;
+     }
+
+
+
+        /* CONTACTS */
+
+    .grid-container-main-contact{
+        display: grid;
+        grid-area: main;
+
+        height: 90vh;
+
+    }
+
+
+
+    .grid-container-text-contact {
+        border-right: 1px solid var(--first-color);
+
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+
+
+    i {
+        padding: 1vh;
+    }
+
+    .svg-img {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "img-snow svg-star";
+    }
+
+    @media screen and (max-width: 900px) {
+
+
+        input[type="text"] {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid var(--first-color);
+            border-radius: 5px;
+            font-size: 12px;
+        }
+    }
+
+    /*Parallax*/
+
+    .parallax {
+        background-color: var(--first-color);
+        min-height: 10px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /*SVG*/
+
+    .svg-element {
+        grid-area: svg-star;
+        text-align: center;
+
+        margin: 8vh 0 0 8vh;
+
+    }
+
+    svg {
+        align-content: center;
+    }
+
+    /*iFrame*/
+
+    .iframe {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+
+
+    #container {
+        grid-area: img-snow;
+      position: relative;
+      display: inline-block;
+    }
+
+    #container img {
+      margin-left: 25vh;
+    }
+
+
+    #overlay {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    #sentence {
+      font-size: 4vh;
+    }
+
+    #sentenceInput {
+      padding: 10px;
+      font-size: 2vh;
+    }
+
+    #nameSection {
+      margin-top: 5vh;
+      text-align: center;
+    }
+
+    #nameDisplay {
+      margin-top: 5vh;
+      font-size: 3vh;
+    }
+
+    .caixas {
+        background-color: var(--main-color);
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+
+
+    .caixas {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .caixas > * {
+        margin: 2vh;
+        padding: 2vh;
+      border-radius: 10px;                 /* arredonda os cantos */
+      box-shadow: 1vh 1vh 2vh var(--first-color);
+    }
+
+
+
 
 

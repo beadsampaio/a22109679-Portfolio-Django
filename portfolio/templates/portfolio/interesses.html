@@ -1,0 +1,31 @@
+<!-- interesses.html -->
+
+
+
+{% extends 'portfolio/about.html' %}
+{% load static %}
+
+
+{% block text-about-content %}
+<h2 class="heading">Interesses</h2>
+    <div class="interesses">
+     <div class = "caixas">
+      {% for interesse in interesses %}
+        <div>
+            <h3>{{interesse.titulo}}</h3>
+            <img src="{{interesse.imagem.url}}" class = "adb">
+            <p>{{interesse.descricao}}</p>
+            {% if interesse.link is not None %}
+            <a href ="{{interesse.link}}" target="_blank"><i class="ri-links-fill"></i></a>
+            {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block blog-about-content %}
+
+
+{% endblock %}
